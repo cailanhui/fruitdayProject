@@ -1,0 +1,72 @@
+{% extends 'login.html' %}
+
+{% block title %}
+    天天果园-会员注册
+{% endblock %}
+
+{% block register1 %}
+    <h2>会员注册</h2>
+{% endblock %}
+
+{% block  register2 %}
+    <a href="{% url 'login' %}">会员登陆&gt;</a>
+{% endblock %}
+
+{% block form %}
+    <form id="regForm" action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <div class="form-line">
+            <p>手机号</p>
+            <div>
+                <input type="text" name="uphone" class="form-control">
+                <br>
+                <span id="uphone-tip">{{ errMsg }}</span>
+            </div>
+        </div>
+        <div class="form-line">
+            <p>密码</p>
+            <div>
+                <input type="password" name="upwd" class="form-control" placeholder="请输入密码">
+            </div>
+        </div>
+        <div class="form-line">
+            <p>确认密码</p>
+            <div>
+                <input type="password" name="cpwd" class="form-control" placeholder="请确认密码">
+            </div>
+        </div>
+        <div class="form-line">
+            <p>用户名</p>
+            <div>
+                <input type="text" name="uname" class="form-control" placeholder="请输入用户名">
+            </div>
+        </div>
+        <div class="form-line">
+            <p>邮箱</p>
+            <div>
+                <input type="email" name="uemail" class="form-control" placeholder="请输入邮箱">
+            </div>
+        </div>
+
+        <div class="form-line">
+            <p></p>
+            <div>
+                <a href="{% url 'login' %}" class="goReg">会员登陆</a>
+                <input type="submit" value="注册" class="btnLogin">
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+{% block style %}
+    <style>
+        #login{
+            margin-top: 30px;
+        }
+    </style>
+{% endblock %}
+
+{% block script %}
+    <script src="/static/js/jquery-1.11.3.js"></script>
+    <script src="/static/js/register.js"></script>
+{% endblock %}

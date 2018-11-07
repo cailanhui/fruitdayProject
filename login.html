@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>
+      {% block title %}
+          天天果园-会员登录
+      {% endblock %}
+  </title>
+	<link rel="stylesheet" href="/static/css/login.css">
+    {% block style %}
+    {% endblock %}
+    {% block script %}
+    {% endblock %}
+ </head>
+ <body>
+    <div id="container">
+
+		<!-- 上 ：会员登录 -->
+        {% block  register1 %}
+            <h2>会员登录</h2>
+        {% endblock %}
+		<!-- 下左：登录图像 -->
+		<p>
+			<img src="/static/images/huiyuan.jpg">
+
+            {% block register2 %}
+			<a href="{% url 'register' %}">会员注册&gt;</a>
+            {% endblock %}
+
+		</p>
+
+		<!-- 下右：登录表单 -->
+		<div id="login">
+            {% block form %}
+			<form action="/login/" method="post">
+                {% csrf_token %}
+				<!-- 第一行：手机号 -->
+                {% for field in form %}
+				    <div class="form-line">
+                        <p>{{ field.label }}</p>
+                        <div>{{ field }}</div>
+				    </div>
+                {% endfor %}
+
+				<!-- 第三行：记住密码，忘记密码-->
+				<div class="form-line">
+					<p></p>
+					<div>
+						<!-- 右浮动 -->
+						<p>
+							<a href="#">忘记密码</a>
+							<a href="#">快捷登录</a>
+						</p>
+						<!-- 不浮动 -->
+						<input type="checkbox" name="isSaved" class="isSaved" checked>记住密码
+					</div>
+				</div>
+				<!-- 第四行：登录按钮-->
+				<div class="form-line">
+					<p></p>
+					<div>
+						<!-- 右：超链接  -->
+						<a href="{% url 'register' %}" class="goReg">注册会员</a>
+						<!-- 左：登录按钮 -->
+						<input type="submit" value="登录" class="btnLogin">
+					</div>
+				</div>
+			</form>
+            {% endblock %}
+		</div>
+	</div>
+ </body>
+</html>

@@ -1,0 +1,132 @@
+p,h2{
+	margin:0;
+}
+
+#container{
+	width:990px;
+	margin:0 auto;
+}
+
+#container>h2{
+	color:#999;
+	font-weight:normal;
+	border-bottom:1px solid #ccc;
+	padding-bottom:20px;
+	margin-bottom:20px;
+}
+
+#container>p{
+	float:left;
+}
+#login{
+	float:right;
+	margin-right:50px;
+	margin-top:80px;
+}
+
+#login .form-line>p{
+	float:left;
+	font-size:16px;
+	color:#999;
+	width:64px;/*每个文字16px的宽，按照4个文字的宽度给*/
+	text-align:right;
+	margin-right:20px;
+	/*行高：为了与文本框垂直居中对齐*/
+	line-height:40px;
+	/*高度：为了把自己给撑起来*/
+	height:40px;
+}
+
+#login .form-line>div{
+	float:left;
+	width:300px;
+}
+
+#login .form-control{
+	/*宽度，高度，边框，box-sizing，取消轮廓，左右内边距*/
+	width:300px;
+	height:40px;
+	border:1px solid #ccc;
+	box-sizing:border-box;
+	outline:none;
+	padding:0 15px;
+}
+#login .form-control:focus{
+	/*边框颜色，边框阴影*/
+	border-color:#64a131;
+	box-shadow:0 0 5px #64a131;
+}
+
+#login .form-line{
+	margin-bottom:25px;
+	/*overflow：hidden : 目的是将 .form-line 的高度撑起来*/
+	overflow:hidden;
+}
+
+#login .form-line>div>p{
+	float:right;
+}
+#login .form-line>div>p a{
+	color:#999;
+	text-decoration:underline;
+}
+#login .isSaved{
+	width:18px;
+	height:18px;
+	vertical-align:middle;
+}
+
+#login .goReg{
+	/*145*38*/
+	/*右浮动，宽度，高度，边框(#64a131)，边框倒角，box-sizing，文本水平居中对齐，垂直居中对齐(行高)，取消下划线，文本颜色(#7BAE55)，文字大小，背景颜色(#F5FFED)*/
+	float:right;
+	width:145px;
+	height:38px;
+	border:1px solid #64A131;
+	border-radius:5px;
+	box-sizing:border-box;
+	text-align:center;
+	line-height:38px;
+	text-decoration:none;
+	color:#7BAE55;
+	font-size:18px;
+	background-color:#f5ffed;
+}
+#login .btnLogin{
+	/*宽度，高度，取消边框，边框倒角，背景颜色，文本颜色，文字大小*/
+	width:145px;
+	height:38px;
+	border:none;
+	border-radius:5px;
+	background-color:#64a131;
+	color:#fff;
+	font-size:18px;
+}
+
+/*会员注册超链接*/
+#container>p{
+	/*相对定位：配合着里面的超链接做绝对定位*/
+	position:relative;
+}
+#container>p>a{
+	/*绝对定位，要在 p 元素中 实现位置的偏移*/
+	position:absolute;
+	bottom:25px;
+	left:173px;
+	/*宽度，高度，边框，box-sizing，倒角，文字大小，文字颜色，水平居中，垂直居中(行高)*/
+	width:154px;
+	height:48px;
+	border:1px solid #64A131;
+	box-sizing:border-box;
+	border-radius:5px;
+	font-size:18px;
+	color:#64A131;
+	text-align:center;
+	line-height:48px;
+}
+
+
+
+
+
+
